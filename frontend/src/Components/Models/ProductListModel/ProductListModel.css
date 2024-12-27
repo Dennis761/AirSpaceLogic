@@ -1,0 +1,45 @@
+.product-list-container {
+  margin: 20px;
+  overflow-x: hidden;
+}
+
+.category-title {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 16px;
+}
+
+.category-title {
+  position: relative;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  width: var(--underline-width);
+  height: 3px;
+  background-color: red;
+  bottom: -10px;
+  left: 0;
+}
+
+.product-scroll-menu {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  align-items: center; 
+}
+
+.product-scroll-menu::-webkit-scrollbar {
+  display: none;
+}
+
+
+.product-item {
+  min-width: 200px;
+  max-width: 250px;
+}

@@ -1,0 +1,30 @@
+.youtube-video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.youtube-video-iframe {
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%; 
+  max-width: 1000px;
+  aspect-ratio: 16 / 9; 
+}
+
+@media (max-width: 1800px) {
+  .youtube-video-iframe {
+    max-width: 800px;
+    margin: 0 10px 0 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .youtube-video-iframe {
+    max-width: 100%; 
+    margin: 0 10px 0 10px;
+    height: auto;
+  }
+}

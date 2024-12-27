@@ -1,0 +1,361 @@
+.subcatalog-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+  }
+  
+   .subcatalog-found-product-container {
+    overflow-x: hidden;
+  }  
+
+  .subcatalog-product-grid2-toolbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  
+  .subcatalog-product-grid3-toolbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  
+  .subcatalog-product-list-toolbar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 94%;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .subcatalog-toolbar-title {
+    font-size: 35px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subcatalog-toolbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; 
+  }
+  
+  .subcatalog-sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+  }
+  
+  .subcatalog-sort-select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .subcatalog-choose-maket-wrapper {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .subcatalog-choose-maket-buttons {
+    color: black;
+    background-color: #ccc;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .subcatalog-choose-maket-buttons:hover {
+    background-color: #5b5b5b;
+  }
+  
+  .subcatalog-choose-maket-buttons.active {
+    background-color: #b22222;
+    color: white;
+  }
+  
+  .subcatalog-sort-dropdown:hover::after,
+  .subcatalog-choose-maket-buttons:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+    margin-bottom: 5px;
+    z-index: 11110;
+  }
+  
+  .subcatalog-sort-dropdown::after,
+  .subcatalog-choose-maket-buttons::after {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  
+
+
+
+
+  @media (max-width: 1400px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-list-toolbar-container {
+      max-width: 1100px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-list-toolbar-container {
+      max-width: 900px;
+    }
+    }
+
+    @media (max-width: 875px) {
+      .subcatalog-search-wrapper,
+      .subcatalog-product-list-toolbar-container {
+        max-width: 800px;
+      }
+    }
+    
+    @media (max-width: 820px) {
+      .subcatalog-search-wrapper,
+      .subcatalog-product-list-toolbar-container {
+        max-width: 750px;
+      }
+
+    .subcatalog-toolbar-title {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+  
+    .subcatalog-toolbar-controls {
+      gap: 8px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 130px;
+      font-size: 12px;
+    }
+  
+    .subcatalog-choose-maket-buttons {
+      padding: 7px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-list-toolbar-container {
+      max-width: 700px;
+      align-items: center;
+    }
+  
+    .subcatalog-toolbar-title {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .subcatalog-toolbar-controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .subcatalog-toolbar-title {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .subcatalog-toolbar-controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 100%;
+      max-width: 150px;
+      font-size: 12px;
+    }
+  
+    .subcatalog-choose-maket-buttons {
+      padding: 5px;
+      font-size: 12px;
+    }
+  } 
+  
+
+
+
+
+
+
+
+
+  
+
+  @media (max-width: 1312px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid3-toolbar-container {
+      max-width: 1050px;
+    }
+  }
+
+  @media (max-width: 1224px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid3-toolbar-container {
+      max-width: 780px;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid3-toolbar-container {
+      max-width: 680px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid3-toolbar-container {
+      max-width: 700px;
+      align-items: center;
+    }
+    
+    .subcatalog-toolbar-title {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .subcatalog-toolbar-controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 100%;
+      max-width: 200px;
+    }
+  } 
+  
+  
+
+
+
+
+
+
+  
+  
+
+  @media (max-width: 1124px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid2-toolbar-container {
+      max-width: 770px;
+    }
+  }
+
+  @media (max-width: 868px) {
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid2-toolbar-container {
+      max-width: 500px;
+      align-items: center;
+    }
+    
+    .subcatalog-toolbar-title {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .subcatalog-toolbar-controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    
+    .subcatalog-search-wrapper,
+    .subcatalog-product-grid2-toolbar-container {
+      max-width: 700px;
+      align-items: center;
+    }
+    
+    .subcatalog-toolbar-title {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .subcatalog-toolbar-controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    .subcatalog-sort-select {
+      width: 100%;
+      max-width: 200px;
+    }
+  } 
+  

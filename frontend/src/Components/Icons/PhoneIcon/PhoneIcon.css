@@ -1,0 +1,108 @@
+
+.phone-icon-container {
+    display: flex;
+    position: fixed;
+    z-index: 1055;
+    left: 1vh;
+    bottom: 1vw;
+  }
+  
+  .phone-icon-circle {
+    width: 10vh;
+    height: 10vh;
+    background-color:  rgba(171, 12, 12, 0.45);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .phone-icon-outer-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .phone-icon {
+    width: 6vh;
+    height: 6vh;
+    color: white;
+    font-size: 2rem;
+    animation: shake 1.2s infinite ease-in-out; 
+}
+
+.phone-icon-circle:hover {
+  cursor: pointer;
+  background-color:  rgb(171, 12, 12);
+  transform: scale(1.1);
+}
+
+.phone-icon-outer-circle:hover .phone-icon-circle::before,
+.phone-icon-outer-circle:hover .phone-icon-circle::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(250, 0, 0, 0.25);
+  background-color: transparent;
+  z-index: -1;
+  animation: pulse 1.5s infinite ease-out;
+}
+
+.phone-icon-outer-circle:hover .phone-icon-circle::after {
+  animation-delay: 1.3s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5); 
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

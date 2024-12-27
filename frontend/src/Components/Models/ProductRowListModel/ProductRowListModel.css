@@ -1,0 +1,10 @@
+.product-row-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9; /* Светлый фон для всего списка */
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+  

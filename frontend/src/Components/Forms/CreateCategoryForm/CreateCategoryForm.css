@@ -1,0 +1,77 @@
+.category-loading-wrapper {
+    padding-right: 0 !important;
+    width: 600px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10574;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+  }
+  
+.category-form-control {
+  border-radius: 4px;
+  margin-left: 6px;
+  font-size: 20px;
+  padding: 6px;
+}
+
+  .modal-header-category-custom {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+  
+  .modal-header-category-custom .modal-title {
+    color: #333;
+  }
+  
+  .modal-header-category-custom .category-close-btn {
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .modal-header-category-custom .category-close-btn:hover {
+    color: #f44336;
+  }
+  
+  .category-form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .category-button-primary {
+    background-color: #a51b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-button-primary:hover {
+    cursor: pointer;
+    background-color: #b03030;
+  }
+  
+  .category-form-group {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  

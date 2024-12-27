@@ -1,0 +1,118 @@
+.product-purchase {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-top: 1px solid #f1efef;
+    border-radius: 5px;
+    margin: 10px;
+    max-width: 550px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.availability {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.available {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.unavailable {
+    font-weight: bold;
+}
+
+.price-info {
+    margin-bottom: 20px;
+}
+
+.current-price {
+    font-size: 28px;
+    color: #424242;
+}
+
+.old-price {
+    font-size: 20px;
+    color: #6c757d;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    font-size: 28px;
+    color: #424242;
+    margin-right: 10px;
+}
+
+
+
+.discount-percentage {
+    font-size: 14px;
+    margin-left: 15px;
+    width: 35px;
+    height: 25px;
+    color: #ffffff;
+    background-color: rgb(226, 63, 63);
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.discount-block{
+    display: flex;
+    align-items: center; 
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.buy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 18px;
+    background-color: hsl(354, 69%, 42%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #e53e3e;
+}
+
+.buy-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.product-cart-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}

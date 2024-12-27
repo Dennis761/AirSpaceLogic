@@ -1,0 +1,103 @@
+.review-form {
+  padding: 25px;
+  margin: 50px auto 50px auto;
+  max-width: 1600px;
+}
+
+.review-title {
+  font-size: 27px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.review-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.review-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#name {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.review-stars {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.review-star {
+  cursor: pointer;
+  transition: color 200ms;
+  margin-right: 10px;
+}
+
+.review-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.review-pros-cons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Добавлен отступ между блоками */
+}
+
+.review-pros,
+.review-cons {
+  width: 48%;
+}
+
+.review-textarea-small {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.review-required {
+  color: red;
+}
+
+.review-html-warning {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.review-submit-btn {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.review-submit-btn:hover {
+  background-color: #a82828;
+}

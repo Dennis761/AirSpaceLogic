@@ -1,0 +1,65 @@
+.review-count {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.review-bubble {
+  background-color: #656565; 
+  color: #FFFFFF;
+  padding: 0.3em 0.01em;
+  border-radius: 4px; 
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+}
+
+.review-bubble::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #656565; 
+}
+
+
+.review-text {
+  position: absolute;
+  z-index: 111500;
+  bottom: 118%; /* Поднимаем текст выше счетчика */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4c4c4c;
+  color: #FFFFFF;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.review-text::after {
+  content: '';
+  position: absolute;
+  top: 90%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #4c4c4c;
+}
+
+.review-count:hover .review-text {
+  opacity: 1;
+}

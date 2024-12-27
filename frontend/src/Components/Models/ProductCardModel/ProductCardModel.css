@@ -1,0 +1,158 @@
+.rating-review-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+
+.product-info-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px 10px 10px;
+}
+
+.product-item {
+  min-height: 360px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  background-color: white;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.product-item:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transform: scale(1.04);
+}
+
+.labels {
+  position: absolute;
+  font-weight: 600;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  border-radius: 5px;
+}
+
+.label.hit {
+  background-color: #28a745;
+}
+
+.label.popular {
+  background-color: #6f42c1;
+}
+
+.image-container {
+  margin-bottom: 15px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+
+.product-item:hover .product-image {
+  opacity: 0;
+}
+
+.product-item:hover .hover-image {
+  opacity: 1;
+}
+
+.product-name {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.rating-count {
+  margin-left: 5px;
+  background-color: #ccc;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 12px;
+}
+
+.price-cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.price-container {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.price-container .old-price { 
+  font-size: 16px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.price-container .product-price {
+  color: #424242;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.add-to-cart-button {
+  background-color: white;
+  border: 2px solid red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+  background-color: red;
+  color: white;
+}
+

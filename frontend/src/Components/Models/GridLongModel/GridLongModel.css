@@ -1,0 +1,111 @@
+.grid-long-model-product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .grid-long-model-product-card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grid-long-model-product-image {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .grid-long-model-main-image {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+  }
+  
+  .grid-long-model-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .grid-long-model-product-card:hover .grid-long-model-hover-image {
+    opacity: 1;
+  }
+  
+  .grid-long-model-tags {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-long-model-tag {
+    font-size: 10px;
+    padding: 2px 5px;
+    margin-right: 4px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  .grid-long-model-tag.recommended { background-color: green; }
+  .grid-long-model-tag.hit { background-color: purple; }
+  .grid-long-model-tag.discounts { background-color: red; }
+  
+  .grid-long-model-product-details {
+    padding: 10px;
+  }
+  
+  .grid-long-model-product-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .grid-long-model-rating {
+    font-size: 12px;
+    color: #ff9800;
+  }
+  
+  .grid-long-model-star {
+    color: #ddd;
+  }
+  
+  .grid-long-model-star.grid-long-model-filled {
+    color: #ff9800;
+  }
+  
+  .grid-long-model-rating-count {
+    color: #555;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  .grid-long-model-price {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .grid-long-model-buy-button {
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .grid-long-model-buy-button:hover {
+    background-color: #b71c1c;
+  }
+  

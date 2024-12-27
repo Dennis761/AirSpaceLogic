@@ -1,0 +1,43 @@
+.delivery-container {
+    max-width: 1200px;
+    margin: 30px auto 10px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .delivery-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .delivery-section {
+    margin-bottom: 20px;
+  }
+  
+  .delivery-subtitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .delivery-description {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #555;
+  }
+  
+  .delivery-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .delivery-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  

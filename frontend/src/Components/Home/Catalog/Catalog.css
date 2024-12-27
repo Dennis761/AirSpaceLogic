@@ -1,0 +1,68 @@
+.catalog-container {
+  height: 70vh;
+  margin: 50px auto;
+}
+
+.subcatalog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-container-h1 {
+  text-align: center;
+  margin: 40px;
+}
+
+.subcatalog-item {
+  color: hsl(354, 69%, 42%);
+  margin: 5px 20px;
+}
+
+.subcatalog-item:hover {
+  transform: scale(1.06);
+  color: #b83542;
+  cursor: pointer;
+}
+
+.no-subcatalogs-message {
+  text-align: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9); 
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
+
+.error-message-product-container {
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message-product-container .error-image {
+  width: 576px
+}
+
