@@ -17,18 +17,18 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch, viewMode })
     <div className={`search-component-${viewMode}`}>
       <form onSubmit={handleSearch}>
         <div className={`form-group-${viewMode}`}>
-          <label htmlFor={`searchInput-${viewMode}`}>Критерии поиска</label>
+          <label htmlFor={`searchInput-${viewMode}`}>Критерії пошуку</label>
           <input
             type="text"
             id={`searchInput-${viewMode}`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className={`search-input-form-${viewMode}`}
-            placeholder="Введите запрос..."
+            placeholder="Введіть пошуковий запит..."
           />
         </div>
         <button type="submit" className={`search-button-${viewMode}`}>
-          Поиск
+          Пошук
         </button>
       </form>
     </div>

@@ -765,7 +765,7 @@ const Header: React.FC = () => {
               <InputGroup className="search-input-group">
                 <Form.Control 
                   type="text" 
-                  placeholder="Поиск..." 
+                  placeholder="Пошук..." 
                   className="search-input"
                   value={prefix}
                   onChange={(e) => setPrefix(e.target.value)} />
@@ -901,8 +901,8 @@ const Header: React.FC = () => {
             </ul>
             <div className="menu-callback">
               <strong>Зворотній дзвінок</strong>
-              <p className="phone-number">+380 66 972 8665</p>
-              <p className="phone-number">+380 98 098 6037</p>
+              <p className="phone-number">+38 (097) 032-78-99</p>
+              <p className="phone-number">+38 (050) 831-74-64</p>
             </div>
             <div className="menu-footer">
               <p>Працюємо по всій Україні!</p>

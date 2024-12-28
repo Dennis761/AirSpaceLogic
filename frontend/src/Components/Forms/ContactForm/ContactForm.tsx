@@ -20,7 +20,7 @@ const ContactForm = ({ show, handleClose }) => {
 
   useEffect(() => {
     if (submitted) {
-      toast.success('Форма успешно отправлена!', {
+      toast.success('Ваш запит надіслано!', {
         position: 'top-right',
         autoClose: 2500,
         hideProgressBar: false,
@@ -38,7 +38,7 @@ const ContactForm = ({ show, handleClose }) => {
     }
 
     if (error) {
-      toast.error(`Ошибка: ${error}`, {
+      toast.error(`Помилка: ${error}`, {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -94,13 +94,13 @@ const ContactForm = ({ show, handleClose }) => {
         <Modal.Body>
           <Form onSubmit={handleSubmit} className="contact-form">
             <Form.Group controlId="formName" className="mt-3 mb-3">
-              <Form.Label>Ваше имя</Form.Label>
+              <Form.Label>Ваше ім'я</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Введите ваше имя"
+                placeholder="Введіть ваше ім'я"
                 required
                 className="custom-contact-input"
               />
@@ -125,18 +125,18 @@ const ContactForm = ({ show, handleClose }) => {
               
             </Form.Group>
             <Form.Group controlId="formComment" className="mt-3 mb-3">
-              <Form.Label>Комментарий</Form.Label>
+              <Form.Label>Комментарій</Form.Label>
               <Form.Control
                 type="text"
                 name="comment"
                 value={formData.comment}
                 onChange={handleChange}
-                placeholder="Введите комментарий"
+                placeholder="Введіть коментарій"
                 className="custom-contact-input"
               />
             </Form.Group>
             <Button variant="primary" type="submit" className="submit-contact-button mt-3">
-              Отправить
+              Відправити
             </Button>
           </Form>
         </Modal.Body>
