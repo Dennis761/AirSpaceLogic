@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   background-color: #2c3e50;
 }
 
@@ -12,8 +12,7 @@
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 600px;
+  /* width: 100%; */
 }
 
 .admin-login-column:hover {
@@ -69,7 +68,7 @@
 }
 
 .admin-input {
-  width: 83%;
+  /* width: 83%; */
   padding: 12px 12px 12px 45px;
   border-radius: 8px;
   border: 2px solid #bdc3c7;

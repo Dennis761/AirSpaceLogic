@@ -51,13 +51,11 @@ export const subcatalogReducer = (
         error: action.payload.error || null,
       };
     case ADD_PRODUCT:
-      console.log(action.payload)
       return {
         ...state,
         products: [action.payload.product, ...state.products],
       };
     case DELETE_PRODUCT:
-      console.log(action.payload.productId)
       return {
         ...state,
         products: state.products.filter(

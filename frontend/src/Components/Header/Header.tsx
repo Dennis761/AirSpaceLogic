@@ -456,7 +456,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Navbar, Form, Button, InputGroup, Offcanvas } from 'react-bootstrap';
 import { FaBars, FaSearch, FaShoppingCart, FaAngleUp, FaPhone, FaAngleRight } from 'react-icons/fa';
 import { FaInfo } from 'react-icons/fa6';
-import { IoClose } from "react-icons/io5";
 import { createProduct } from '../../Redux/Actions/productActions.ts'
 import { 
   fetchCatalogs,
@@ -485,6 +484,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCatalog, setActiveCatalog] = useState<string | boolean>(false);
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
   const [modalCategory, setModalCategory] = useState<string | null>(null);
   const [modalSubcategory, setModalSubcategory] = useState<string | null>(null);
@@ -700,7 +700,7 @@ const Header: React.FC = () => {
                                   <span>{subCategory.name}</span>
                                   {isAuthenticated && (
                                     <div className="subcatalog-actions-wrapper">
-                                      <button
+                                      <button 
                                         className="add-product-btn"
                                         onClick={(e) => {
                                           e.stopPropagation();
@@ -716,7 +716,7 @@ const Header: React.FC = () => {
                                           handleSubcatalogDelete();
                                         }}
                                       >
-                                        <IoClose />
+                                        -
                                       </button>
                                     </div>
                                   )}
@@ -768,13 +768,20 @@ const Header: React.FC = () => {
                   placeholder="Пошук..." 
                   className="search-input"
                   value={prefix}
-                  onChange={(e) => setPrefix(e.target.value)} />
+                  onChange={(e) => setPrefix(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault(); // Предотвращает перезагрузку страницы
+                      handleSearch();
+                    }
+                  }} 
+                />
                 <Button variant="danger" className="search-btn" onClick={handleSearch}>
                   <FaSearch />
                 </Button>
               </InputGroup>
             </Form>
-  
+
             <div className="right-icons d-flex align-items-center">
               {isAuthenticated ? (
                 <>
@@ -831,20 +838,34 @@ const Header: React.FC = () => {
   
       <Offcanvas show={showOffcanvas} onHide={handleToggleOffcanvas} placement="start">
         <div className="modal-header-custom">
-          <Offcanvas.Title className="catalog-container-title">Каталог товаров</Offcanvas.Title>
+          <Offcanvas.Title className="catalog-container-title">Меню</Offcanvas.Title>
           <button className="custom-close-btn" onClick={handleToggleOffcanvas}>
             &times;
           </button>
         </div>
         <Offcanvas.Body>
-          {Array.isArray(catalog) && catalog.length > 0 ? (
-            catalog.map((category) => (
+        <div
+            className="catalog-auth-toggle catalog-homepage-dropdown-mobile"
+            onClick={() => {handleToggleOffcanvas();navigate('/');}}
+          >
+            На головну сторінку
+          </div>
+          <div
+            className="catalog-auth-toggle catalog-products-dropdown-mobile"
+            onClick={() => setActiveCatalog(!activeCatalog)}
+          >
+            Каталог товарів
+          </div>
+          {Array.isArray(catalog) && catalog.length > 0 && (
+            activeCatalog && catalog.map((category) => (
               <div key={category.name}>
                 <div
                   className="catalog-dropdown-mobile-item"
                   onClick={() => handleCategoryClick(category.name)}
                 >
-                  {category.name}
+                  <p className='catalog-dropdown-mobile-item-title'>
+                    {category.name}
+                  </p>
                   <FaAngleRight
                     className={`icon ${activeCategory === category.name ? 'rotate' : ''}`}
                   />
@@ -870,14 +891,12 @@ const Header: React.FC = () => {
                 )}
               </div>
             ))
-          ) : (
-            <p style={{margin: '10px', color: 'white'}}>Каталог пуст.</p>
           )}
           <div
             className="catalog-auth-toggle catalog-dropdown-mobile-item"
             onClick={isAuthenticated ? handleLogout : handleLogin}
           >
-            {isAuthenticated ? 'Выйти' : 'Войти как администратор'}
+            {isAuthenticated ? 'Вийти' : 'Увійти як адміністратор'}
           </div>
         </Offcanvas.Body>
       </Offcanvas>

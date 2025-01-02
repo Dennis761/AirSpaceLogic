@@ -84,7 +84,7 @@ export const addSubcatalog = (
       { catalogKey, subcatalogName },
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    console.log(response.data.subcatalogs)
+
     dispatch({
       type: ADD_SUBCATALOG,
       payload: response.data, 

@@ -9,7 +9,6 @@ interface ImageZoomModelProps {
 const ImageZoomModel: React.FC<ImageZoomModelProps> = ({ imageUrl, parametrs }) => {
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  console.log(parametrs)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();

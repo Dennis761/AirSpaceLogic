@@ -87,7 +87,6 @@
 
 
 .error-message-container {
-  width: 100wh;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -202,6 +201,10 @@
   .product-item:hover {
     transform: scale(1.01);
   }
+
+  .error-message-container .error-image {
+    width: 496px
+  }
 }
 
 @media (max-width: 597px) {
@@ -221,6 +224,10 @@
   .product-item:hover {
     transform: scale(1.01);
   }
+
+  .error-message-container .error-image {
+    width: 416px
+  }
 }
 
 @media (max-width: 525px) {
@@ -239,5 +246,15 @@
 
   .product-item:hover {
     transform: scale(1.01);
+  }
+
+  .error-message-container .error-image {
+    width: 356px
+  }
+}
+
+@media (max-width: 400px) {
+  .error-message-container .error-image {
+    width: 256px
   }
 }

@@ -75,3 +75,29 @@
     margin-bottom: 10px;
   }
   
+
+
+
+  @media (max-width: 640px) {
+    .category-loading-wrapper {
+      width: 90%;
+    }
+  
+    .category-form-control {
+      width: 95%;
+    }
+  
+    .modal-header-category-custom {
+      align-items: center;
+      font-size: 18px;
+    }
+  
+    .modal-header-category-custom .category-close-btn {
+      margin-top: 10px;
+    }
+  
+    .category-button-primary {
+      width: 100%; 
+      font-size: 16px; 
+    }
+  }

@@ -12,7 +12,6 @@ const CurrencySelector: React.FC = () => {
   useEffect(() => {
     const savedCurrency = localStorage.getItem("selectedCurrency") || "UAH";
     dispatch(setActiveCurrencyAndRate(savedCurrency)); 
-    console.log(activeCurrency)
   }, [dispatch]);
 
   const handleCurrencyClick = (currency: string) => {

@@ -61,21 +61,13 @@ const CreateProductFormModal = ({ show, handleClose, onSubmit }) => {
     { value: 'Хіт Продажу', label: 'Хіт Продажу' },
     { value: 'Знижка', label: 'Знижка' },
   ];
-  // const parametrOptions = [
-  //   { value: 'Recommended', label: 'Recommended' },
-  //   { value: 'New product', label: 'New product' },
-  //   { value: 'Hit', label: 'Hit' },
-  //   { value: 'Discounts', label: 'Discounts' },
-  // ];
-
+  
   const handleImageUpload = (e, field) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       setImageToCrop(URL.createObjectURL(files[0]))
-      console.log(imageToCrop)
       setCurrentField(field);
       setShowCropModal(true);
-      console.log(formData)
     }
   }
 
@@ -240,7 +232,7 @@ const CreateProductFormModal = ({ show, handleClose, onSubmit }) => {
           <div className="form-scrollable-content">
             <Form onSubmit={handleSubmit}>
 
-              <Form.Group as={Row} controlId="name" className="create-form-group">
+              <Form.Group as={Row} className="create-form-group">
                 <Form.Label column sm={2} className="create-form-label">Name</Form.Label>
                 <Col sm={10}>
                   <Form.Control

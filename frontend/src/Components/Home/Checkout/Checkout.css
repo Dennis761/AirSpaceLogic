@@ -317,6 +317,15 @@
     width: 100%;
     margin-bottom: 20px;
   }
+
+  .checkout-order-summary table th:nth-child(3), /* Модель */
+  .checkout-order-summary table th:nth-child(5), /* Ціна за шт. */
+  .checkout-order-summary table th:nth-child(7), /* Видалити */
+  .checkout-order-summary table td:nth-child(3),
+  .checkout-order-summary table td:nth-child(5),
+  .checkout-order-summary table td:nth-child(7) {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -373,5 +382,16 @@
   .checkout-submit-btn {
     font-size: 14px;
     padding: 10px;
+  }
+
+  .checkout-order-summary table th:nth-child(1), 
+  .checkout-order-summary table th:nth-child(3),
+  .checkout-order-summary table th:nth-child(5),
+  .checkout-order-summary table th:nth-child(7),
+  .checkout-order-summary table td:nth-child(1),
+  .checkout-order-summary table td:nth-child(3),
+  .checkout-order-summary table td:nth-child(5),
+  .checkout-order-summary table td:nth-child(7) {
+    display: none;
   }
 }

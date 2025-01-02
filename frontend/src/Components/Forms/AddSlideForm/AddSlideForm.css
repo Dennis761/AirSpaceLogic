@@ -29,8 +29,6 @@
 .modal-header-slide-custom .slide-close-btn {
   display: flex;
   font-size: 24px;
-  /* width: 20px;
-  height: 20px; */
   cursor: pointer;
   background: none;
   border: none;
@@ -70,4 +68,31 @@
   margin-top: 10px;
   margin-bottom: 10px;
 
+}
+
+
+
+
+@media (max-width: 640px) {
+  .slide-loading-wrapper {
+    width: 90%;
+  }
+
+  .custom-contact-input {
+    width: 95%;
+  }
+
+  .modal-header-slide-custom {
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .modal-header-slide-custom .slide-close-btn {
+    margin-top: 10px;
+  }
+
+  .slide-button-primary {
+    width: 100%; 
+    font-size: 16px; 
+  }
 }

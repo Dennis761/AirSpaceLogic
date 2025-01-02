@@ -37,7 +37,6 @@ export const catalogReducer = (state = initialState, action: any): CatalogState 
         error: null,
       };
     case FETCH_CATALOGS:
-      console.log('FETCH_CATALOGS', action.payload.catalogs)
       return {
         ...state,
         catalogs: action.payload.catalogs,
@@ -45,11 +44,6 @@ export const catalogReducer = (state = initialState, action: any): CatalogState 
       };
     case FETCH_SUBCATALOGS: {
       const { catalogName, subCatalogs } = action.payload;
-      console.log('FETCH_SUBCATALOGS', state.catalogs.map((catalog) =>
-        catalog.name === catalogName
-          ? { ...catalog, subCatalogs }
-          : catalog
-      ))
       return {
         ...state,
         catalogs: state.catalogs.map((catalog) =>

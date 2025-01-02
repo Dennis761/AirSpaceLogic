@@ -5,7 +5,6 @@ import { SEND_ORDER_REQUEST, SEND_ORDER_SUCCESS, SEND_ORDER_FAILURE } from '../C
 export const sendOrder = (orderData) => async (dispatch) => {
   dispatch({ type: SEND_ORDER_REQUEST });
 
-  console.log(orderData)
   try {
     const response = await axios.post('/sendOrderToTelegram', orderData);
 

@@ -74,3 +74,30 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+
+
+@media (max-width: 640px) {
+    .subcatalog-loading-wrapper {
+      width: 90%;
+    }
+  
+    .subcatalog-form-control {
+      width: 95%;
+    }
+  
+    .modal-header-subcatalog-custom {
+      align-items: center;
+      font-size: 18px;
+    }
+  
+    .modal-header-subcatalog-custom .subcatalog-close-btn {
+      margin-top: 10px;
+    }
+  
+    .subcatalog-button-primary {
+      width: 100%; 
+      font-size: 16px; 
+    }
+  }

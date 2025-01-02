@@ -41,7 +41,7 @@ export const createProduct = (productData: Product) => async (dispatch: AppDispa
     if (!token) {
       throw new Error('Token not found in local storage');
     }
-    console.log('createProduct')
+
     const formData = new FormData();
     formData.append('folder', 'ProductImages');
 
@@ -80,10 +80,7 @@ export const createProduct = (productData: Product) => async (dispatch: AppDispa
         formData.append(key, value);
       }
     });
-    for (const [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-  }
-
+    
       const response = await axios.post(
         '/api/products/create-product', 
         formData,

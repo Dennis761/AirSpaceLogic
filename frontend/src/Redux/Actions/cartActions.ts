@@ -1,7 +1,6 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART_ITEM_QUANTITY } from '../Constants/cartConstants.ts';
 
 export const addToCart = (product, quantity = 1) => {
-  console.log('product, quantity', product, quantity)
   return {
     type: ADD_TO_CART,
     payload: {

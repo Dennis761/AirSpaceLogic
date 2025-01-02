@@ -13,7 +13,6 @@ export const fetchCategories = () => async (dispatch: any) => {
   try {
     dispatch({ type: FETCH_CATEGORIES_REQUEST });
     const { data } = await axios.get('/api/categories');
-    console.log(data)
     dispatch({ type: FETCH_CATEGORIES_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -29,7 +28,6 @@ export const addCategory = (categoryName: string) => async (dispatch: any) => {
       if (!token) {
         throw new Error('Token not found in local storage');
       }
-      console.log(categoryName)
     const { data } = await axios.post('/api/categories/add-category', { name: categoryName }, {
       headers: {
         'Authorization': `Bearer ${token}`,

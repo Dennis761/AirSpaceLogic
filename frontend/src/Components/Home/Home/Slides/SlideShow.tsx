@@ -40,20 +40,14 @@ const SlideShow: React.FC<SlideShowProps> = ({ isAdmin }) => {
 
   const handleAddSlide = (mobileImage: File, desktopImage?: File) => {
     setPreviewImage(URL.createObjectURL(mobileImage));
-    console.log(previewImage)
     dispatch(addSlide(mobileImage, desktopImage));
     setShowAddSlideForm(false);
   };
 
   const handleRemoveSlide = () => {
-    console.log('Bing')
     if (slides.length >= 1) {
-      console.log('Bu')
       const fullUrl = slides[currentIndex]?.desktopImage || slides[currentIndex]?.mobileImage;
-      console.log('Bu1')
       const fileName = fullUrl.split('/').pop(); // Извлекаем имя файла
-      console.log('Bu2')
-      console.log(fileName)
       if (fileName) {
         dispatch(removeSlide(fileName, currentIndex)); // Передаем только имя файла
       }

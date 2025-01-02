@@ -12,10 +12,11 @@
     }
   
     .catalog-container-title {
-      font-size: 15px;
+      font-size: 18px;
       margin-left: 10px;
       margin-top: 10px;
       margin-bottom: 10px;
+      font-weight: 500;
       color: antiquewhite;
     }
 
@@ -69,6 +70,8 @@
       cursor: pointer
     }
     
+    .catalog-homepage-dropdown-mobile,
+    .catalog-products-dropdown-mobile,
     .catalog-dropdown-mobile-item {
       padding: 10px;
       border: 1px solid #ccc;
@@ -86,6 +89,8 @@
       border-bottom: none;
     }
     
+    .catalog-homepage-dropdown-mobile:hover,
+    .catalog-products-dropdown-mobile:hover,
     .catalog-dropdown-mobile-item:hover {
       background-color: #b52a37;
     }
@@ -100,6 +105,10 @@
       justify-content: space-between;
       align-items: center;
       text-align: left;
+    }
+
+    .catalog-dropdown-mobile-item-title {
+      margin-left: 15px;
     }
 
     .catalog-dropdown-mobile-subitem-title {

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import ContactForm from '../Forms/ContactForm/ContactForm.tsx';
 import logo from '../../Images/image.png';
 import privat from '../../Images/privat.png';
@@ -30,6 +30,7 @@ const Footer = () => {
   const [popularSubCatalogs, setPopularSubCatalogs] = useState<any[]>([]);
   const [uniqueCatalogs, setUniqueCatalogs] = useState<any[]>([]);
   const navigate = useNavigate();
+  const location = useLocation(); // Получаем текущий маршрут
 
   const catalog = useSelector((state: RootState) => state.catalog.catalogs || []);
 
@@ -55,100 +56,105 @@ const Footer = () => {
     setUniqueCatalogs(shuffledCategories.slice(0, 6));
   }, [catalog]);
 
+  // Скролл в начало страницы при изменении маршрута
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
   return (
     <>
-    <footer className="footer-grid">
-      <div className="footer-container-grid">
-        <div className="footer-logo-section">
-          <img src={logo} alt="logo" className="footer-logo" />
-          <ul className="footer-contact-info">
-            <li><a href="tel:+380669728665">+38 (097) 032-78-99</a></li>
-            <li><a href="tel:+380989086037">+38 (050) 831-74-64</a></li>
-            <li>Київ, ТРЦ Мармелад 2 Поверх</li>
-          </ul>
-          <button className="footer-callback-btn" onClick={handleClick}>Зворотний дзвінок</button>
+      <footer className="footer-grid">
+        <div className="footer-container-grid">
+          <div className="footer-logo-section">
+            <img src={logo} alt="logo" className="footer-logo" />
+            <ul className="footer-contact-info">
+              <li><a href="tel:+380669728665">+38 (097) 032-78-99</a></li>
+              <li><a href="tel:+380989086037">+38 (050) 831-74-64</a></li>
+              <li>Київ, ТРЦ Мармелад 2 Поверх</li>
+            </ul>
+            <button className="footer-callback-btn" onClick={handleClick}>Зворотний дзвінок</button>
+          </div>
+
+          <div className="footer-info-section">
+            <h3>Інформація</h3>
+            <ul className="footer-links">
+              <li><Link to="/about-us">Про нас</Link></li>
+              <li><Link to="/delivery-and-payment">Доставка та оплата</Link></li>
+              <li><Link to="/guarantee-and-service">Гарантія та сервіс</Link></li>
+              <li><Link to="/contact-us">Зв’язатися з нами</Link></li>
+              <li><Link to="/manufacturers">Виробники</Link></li>
+              <li><a href="https://www.tiktok.com/@fpv_spacelogic">Відео огляди</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-category-section">
+            <h3>Категорії</h3>
+            <ul className="footer-links">
+              {uniqueCatalogs.map((cat) => (
+                <li key={cat._id}>
+                  <div
+                    onClick={() => navigate(`/catalog/${cat.name}`)}
+                    className="footer-link-item"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Відкрити категорію ${cat.name}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') navigate(`/catalog/${cat.name}`);
+                    }}
+                  >
+                    {cat.name}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer-popular-section">
+            <h3>Популярне</h3>
+            <ul className="footer-links">
+              {popularSubCatalogs.map((sub) => (
+                <li key={sub._id}>
+                  <div
+                    onClick={() => navigate(`/catalog/${sub.catalogName}/${sub.name}`)}
+                    className="footer-link-item"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Відкрити субкаталог ${sub.name}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') navigate(`/catalog/${sub.catalogName}/${sub.name}`);
+                    }}
+                  >
+                    {sub.name}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="footer-info-section">
-          <h3>Інформація</h3>
-          <ul className="footer-links">
-            <li><Link to="/about-us">Про нас</Link></li>
-            <li><Link to="/delivery-and-payment">Доставка та оплата</Link></li>
-            <li><Link to="/guarantee-and-service">Гарантія та сервіс</Link></li>
-            <li><Link to="/contact-us">Зв’язатися з нами</Link></li>
-            <li><Link to="/manufacturers">Виробники</Link></li>
-            <li><a href="https://www.tiktok.com/@fpv_spacelogic">Відео огляди</a></li>
-          </ul>
+        <div className="footer-social-media-wrapper">
+          <h2 className="footer-social-media-title">Ми в соціальних мережах</h2>
+          <div className="footer-social-media">
+            <Link to="https://www.instagram.com/military_tactic_shop/" aria-label="Instagram"><IoLogoInstagram size={40} /></Link>
+            <Link to="https://www.tiktok.com/@fpv_spacelogic" aria-label="TikTok"><IoLogoTiktok size={40} /></Link>
+            <Link to="https://www.facebook.com/profile.php?id=61568076247567" aria-label="Facebook"><FaFacebookF size={40} /></Link>
+            <Link to="https://t.me/LIGAfpv" aria-label="Telegram"><FaTelegramPlane size={40} /></Link>
+          </div>
         </div>
 
-        <div className="footer-category-section">
-          <h3>Категорії</h3>
-          <ul className="footer-links">
-            {uniqueCatalogs.map((cat) => (
-              <li key={cat._id}>
-                <div
-                  onClick={() => navigate(`/catalog/${cat.name}`)}
-                  className="footer-link-item"
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Відкрити категорію ${cat.name}`}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') navigate(`/catalog/${cat.name}`);
-                  }}
-                >
-                  {cat.name}
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="footer-bottom-grid">
+          <p>© 2024 AirSpaceLogic - магазин професійних FPV дронів номер один в Україні</p>
         </div>
-
-        <div className="footer-popular-section">
-          <h3>Популярне</h3>
-          <ul className="footer-links">
-            {popularSubCatalogs.map((sub) => (
-              <li key={sub._id}>
-                <div
-                  onClick={() => navigate(`/catalog/${sub.catalogName}/${sub.name}`)}
-                  className="footer-link-item"
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Відкрити субкаталог ${sub.name}`}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') navigate(`/catalog/${sub.catalogName}/${sub.name}`);
-                  }}
-                >
-                  {sub.name}
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="footer-company-logos">
+          <img src={mastercard} className="mastercard-image" alt="mastercard" />
+          <img src={visa} className="visa-image" alt="visa" />
+          <img src={monobank} className="monobank-image" alt="monobank" />
+          <img src={privat} className="privat-image" alt="privat" />
         </div>
-      </div>
+      </footer>
 
-      <div className="footer-social-media-wrapper">
-        <h2 className="footer-social-media-title">Ми в соціальних мережах</h2>
-        <div className="footer-social-media">
-          <Link to="https://www.instagram.com/military_tactic_shop/" aria-label="Instagram"><IoLogoInstagram size={40} /></Link>
-          <Link to="https://www.tiktok.com/@fpv_spacelogic" aria-label="TikTok"><IoLogoTiktok size={40} /></Link>
-          <Link to="https://www.facebook.com/profile.php?id=61568076247567" aria-label="Facebook"><FaFacebookF size={40} /></Link>
-          <Link to="https://t.me/LIGAfpv" aria-label="Telegram"><FaTelegramPlane size={40} /></Link>
-        </div>
-      </div>
-
-      <div className="footer-bottom-grid">
-        <p>© 2024 AirSpaceLogic - магазин професійних FPV дронів номер один в Україні</p>
-      </div>
-      <div className="footer-company-logos">
-        <img src={mastercard} className="mastercard-image" alt="mastercard" />
-        <img src={visa} className="visa-image" alt="visa" />
-        <img src={monobank} className="monobank-image" alt="monobank" />
-        <img src={privat} className="privat-image" alt="privat" />
-      </div>
-    </footer>
-
-    {showForm && <ContactForm show={showForm} handleClose={handleClose} />}
-  </>
+      {showForm && <ContactForm show={showForm} handleClose={handleClose} />}
+    </>
   );
 };
 

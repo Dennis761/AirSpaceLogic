@@ -1,3 +1,8 @@
+/* Базовые стили */
+body.modal-open {
+  padding-right: 0 !important;
+}
+
 .open-form-button {
   max-width: 600px;
   background-color: #007bff;
@@ -20,8 +25,8 @@
 }
 
 .modal-contact-wrapper {
-  padding-right: 0 !important;
   width: 600px;
+  padding-right: 0 !important;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -64,21 +69,10 @@
   color: #f44336;
 }
 
-.modal-header-contact-custom {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
-}
-
 .contact-form {
   padding: 10px;
   display: flex;
   flex-direction: column;
-}
-
-.submit-button-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
 }
 
 .custom-contact-input {
@@ -113,9 +107,39 @@
   color: white;
 }
 
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
 .thank-you-message {
   text-align: center;
   padding: 20px;
   font-size: 18px;
   color: #28a745;
+}
+
+@media (max-width: 640px) {
+  .modal-contact-wrapper {
+    width: 90%;
+  }
+
+  .custom-contact-input {
+    width: 95%;
+  }
+
+  .modal-header-contact-custom {
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .modal-header-contact-custom .contact-close-btn {
+    margin-top: 10px;
+  }
+
+  .submit-contact-button {
+    width: 100%; 
+    font-size: 16px; 
+  }
 }
