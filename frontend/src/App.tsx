@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from './Components/Header/Header.tsx';
-import Home from './Components/Home/Home/Home.tsx';
+import Home from './Components/Home/Home/Home/Home.tsx';
 import FullProduct from './Components/Home/FullProduct/FullProduct/FullProduct.tsx'
 import Footer from './Components/Footer/Footer.tsx'
 import Checkout from './Components/Home/Checkout/Checkout.tsx'

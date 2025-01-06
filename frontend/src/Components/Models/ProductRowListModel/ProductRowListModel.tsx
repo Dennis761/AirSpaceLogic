@@ -28,7 +28,7 @@ const ProductRowListModel: React.FC<ProductRowListModelProps> = ({
           />
         ))
       ) : (
-        <p className="no-products">Нет доступных товаров</p>
+        <p className="no-products">Немає доступних товарів</p>
       )}
     </div>
   );

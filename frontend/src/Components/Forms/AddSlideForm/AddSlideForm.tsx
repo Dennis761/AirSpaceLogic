@@ -53,7 +53,7 @@ const AddSlideForm: React.FC<AddSlideFormProps> = ({ show, onClose, onSubmit }) 
       <Modal.Body className="slide-modal-body">
         <Form onSubmit={handleSubmit} className="slide-form">
           <Form.Group controlId="mobileImage" className="slide-form-group mb-3">
-            <Form.Label>Загрузить изображение для мобильной версии</Form.Label>
+            <Form.Label>Загрузить изображение для компьютерной версии</Form.Label>
             <input
               type="file"
               accept="image/*"
@@ -66,7 +66,7 @@ const AddSlideForm: React.FC<AddSlideFormProps> = ({ show, onClose, onSubmit }) 
           </Form.Group>
 
           <Form.Group controlId="desktopImage" className="slide-form-group mb-3">
-            <Form.Label>Загрузить изображение для компьютерной версии</Form.Label>
+            <Form.Label>Загрузить изображение для мобильной версии</Form.Label>
             <input
               type="file"
               accept="image/*"

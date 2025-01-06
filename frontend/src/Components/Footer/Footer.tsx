@@ -68,8 +68,8 @@ const Footer = () => {
           <div className="footer-logo-section">
             <img src={logo} alt="logo" className="footer-logo" />
             <ul className="footer-contact-info">
-              <li><a href="tel:+380669728665">+38 (097) 032-78-99</a></li>
-              <li><a href="tel:+380989086037">+38 (050) 831-74-64</a></li>
+              <li><a href="tel:+380970327899">+38 (097) 032-78-99</a></li>
+              <li><a href="tel:+380508317464">+38 (050) 831-74-64</a></li>
               <li>Київ, ТРЦ Мармелад 2 Поверх</li>
             </ul>
             <button className="footer-callback-btn" onClick={handleClick}>Зворотний дзвінок</button>

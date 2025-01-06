@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
-import SlideShow from './Slides/SlideShow.tsx';
-import Description from './Description/Description.tsx';
-import Suggestion from './Suggestion/Suggestion.tsx';
-import ProductList from '../../Models/ProductListModel/ProductListModel.tsx';
-import { fetchCategories, addCategory, removeCategory, addProductToCategory } from '../../../Redux/Actions/categoryActions.ts';
-import CreateCategoryForm from '../../Forms/CreateCategoryForm/CreateCategoryForm.tsx';
-import CreateProductFormModal from '../../Forms/CreateProductForm/CreateProductForm.tsx';
-import { AppDispatch, RootState } from '../../../Redux/store.ts';
-import { Product } from '../../../Redux/Reducers/categoryReducer.ts';
-import errorImage from '../../../Images/errorImage.png'
+import SlideShow from '../Slides/SlideShow.tsx';
+import Description from '../Description/Description.tsx';
+import Suggestion from '../Suggestion/Suggestion.tsx';
+import ProductList from '../../../Models/ProductListModel/ProductListModel.tsx';
+import { fetchCategories, addCategory, removeCategory, addProductToCategory } from '../../../../Redux/Actions/categoryActions.ts';
+import CreateCategoryForm from '../../../Forms/CreateCategoryForm/CreateCategoryForm.tsx';
+import CreateProductFormModal from '../../../Forms/CreateProductForm/CreateProductForm.tsx';
+import { AppDispatch, RootState } from '../../../../Redux/store.ts';
+import { Product } from '../../../../Redux/Reducers/categoryReducer.ts';
+import errorImage from '../../../../Images/errorImage.png'
 import './Home.css';
-import { setActiveCurrencyAndRate } from '../../../Redux/Actions/currencyActions.ts';
+import { setActiveCurrencyAndRate } from '../../../../Redux/Actions/currencyActions.ts';
 
 export default function Home() {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
@@ -53,7 +53,6 @@ export default function Home() {
   const handleProductFormSubmit = (formData: Product) => {
     if (selectedCategory) {
       dispatch(addProductToCategory(selectedCategory, formData));
-      console.log(`Product added to category "${selectedCategory}":`, formData);
     }
     handleCloseProductModal();
   };

@@ -22,15 +22,16 @@ const ProductList: React.FC<ProductListProps> = ({ categoryTitle, products, isAd
         {categoryTitle}
       </h2>
       <div className="product-scroll-menu">
-  {products.map((product) => (
-    <div className="product-item" key={product._id}>
-      <ProductCardModel
-        product={product}
-        isAdmin={isAdmin}
-        categoryTitle={categoryTitle}
-      />
-    </div>
-  ))}
+        {products.map((product) => (
+          // <div className="product-item" key={product._id}>
+          <div className='product-card-wrapper' key={product._id}>
+            <ProductCardModel
+              product={product}
+              isAdmin={isAdmin}
+              categoryTitle={categoryTitle}
+            />
+          </div>
+        ))}
 </div>
     </div>
   ); 

@@ -39,13 +39,11 @@
 
 .dots {
     flex-grow: 1;
-    border-bottom: 1px dotted #bbb;
     margin: 0 10px;
     display: inline-block;
 }
 
 .value {
     flex-shrink: 0;
-    width: 50%;
     text-align: right;
 }

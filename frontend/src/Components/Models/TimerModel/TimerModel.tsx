@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './TimerModel.css'
+import './TimerModel.css';
 
 interface TimeLeft {
   days: number;
@@ -46,25 +46,25 @@ const TimerModel = ({ initialDays }: { initialDays: number }) => {
   return (
     <div className="timer-discount-container">
       <div className="timer-label">
-        <span>Акция</span>
-        <div className="timer-sub-label">Завершается через:</div>
+        <span>Акція</span>
+        <div className="timer-sub-label">Завершується через:</div>
       </div>
       <div className="timer">
         <div className="time-box">
           <span className="time-number">{String(timeLeft.days).padStart(2, '0')}</span>
-          <span className="time-label">Дней</span>
+          <span className="time-label">Днів</span>
         </div>
         <div className="time-box">
           <span className="time-number">{String(timeLeft.hours).padStart(2, '0')}</span>
-          <span className="time-label">Часов</span>
+          <span className="time-label">Годин</span>
         </div>
         <div className="time-box">
           <span className="time-number">{String(timeLeft.minutes).padStart(2, '0')}</span>
-          <span className="time-label">Минут</span>
+          <span className="time-label">Хвилин</span>
         </div>
         <div className="time-box">
           <span className="time-number">{String(timeLeft.seconds).padStart(2, '0')}</span>
-          <span className="time-label">Сек</span>
+          <span className="time-label">Секунд</span>
         </div>
       </div>
     </div>

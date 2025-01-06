@@ -6,16 +6,16 @@ export default function AdditionalInfo({isAvailable, manufacturer, rating}) {
   return (
     <div className='additional-info-container'>
         <div className="availability">
-          Доступность: 
+          Доступність: 
           <span className={isAvailable ? 'available' : 'unavailable'}>
-            {isAvailable ? 'Есть в наличии' : 'Нет в наличии'}
+            {isAvailable ? 'Є в наявності' : 'Немає в наявності'}
           </span>
           <div className="rating-container">
             <ProductRatingModel rating={rating}/>
           </div>
         </div>
-        <div>
-          Производитель: <span>{manufacturer}</span>
+        <div className='manufacturer'>
+          Виробник: <span>{manufacturer}</span>
         </div>
       </div>
   )

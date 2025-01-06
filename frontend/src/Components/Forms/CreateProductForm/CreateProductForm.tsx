@@ -52,7 +52,6 @@ const CreateProductFormModal = ({ show, handleClose, onSubmit }) => {
       ...prevData,
       specifications: formData.specifications,
     }));
-    console.log("Received formData from child:", formData);
   };
 
   const parametrOptions = [
@@ -193,8 +192,6 @@ const CreateProductFormModal = ({ show, handleClose, onSubmit }) => {
       draggable: true,
       progress: undefined,
     });
-  console.log('successes')
-    // Закрытие модального окна
     handleClose();
   };
   

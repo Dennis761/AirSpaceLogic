@@ -11,7 +11,7 @@ const ReviewCount = ({ count }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <span className="review-bubble">{count}</span>
-      {isHovered && <span className="review-text">ОТЗЫВОВ</span>}
+      {isHovered && <span className="review-text">КОМЕНТАРІВ</span>}
     </div>
   );
 };

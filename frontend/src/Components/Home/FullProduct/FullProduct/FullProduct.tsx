@@ -78,32 +78,29 @@ export default function FullProduct() {
           <div className="custom-spinner"></div>
         </div>
       ) : error ? (
-        <div className="error-container">Ошибка: {error}</div>
+        <div className="error-container">Помилка: {error}</div>
       ) : (
         <>
           <div className="title-tabs-container">
-            <p className="full-product-title">{product.name || 'Без названия'}</p>
+            <p className="full-product-title">{product.name || 'Без назви'}</p>
 
             <div className="full-tabs-container">
+              {['Все про товар', 'Характеристики', `Коментарі (${comments?.length || 0})`].map((tab, index) => (
+                <div
+                  key={index}
+                  className={`full-tab ${activeTab === index ? 'full-active' : ''}`}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {tab}
+                </div>
+              ))}
               <div
-                className={`full-tab ${activeTab === 0 ? 'full-active' : ''}`}
-                onClick={() => setActiveTab(0)}
-              >
-                Все о товаре
-              </div>
-              <div
-                className={`full-tab ${activeTab === 1 ? 'full-active' : ''}`}
-                onClick={() => setActiveTab(1)}
-              >
-                Характеристики
-              </div>
-              <div
-                className={`full-tab ${activeTab === 2 ? 'full-active' : ''}`}
-                onClick={() => setActiveTab(2)}
-              >
-                Отзывы ({comments?.length || 0})
-              </div>
-              <div className="full-tabs-underline"></div>
+                className="full-tabs-underline"
+                style={{
+                  width: `${activeTab === 0 ? '110px' : activeTab === 1 ? '130px' : '110px'}`,
+                  left: `${activeTab === 0 ? '0' : activeTab === 1 ? '120px' : '260px'}`,
+                }}
+              ></div>
             </div>
           </div>
 
@@ -126,7 +123,7 @@ export default function FullProduct() {
 
                       <AdditionalInfo
                         rating={product.rating || 0}
-                        manufacturer={product.manufacturer || 'Не указан'}
+                        manufacturer={product.manufacturer || 'Не вказаний'}
                         isAvailable={product.available || false}
                       />
                       <ProductPurchase
@@ -160,7 +157,7 @@ export default function FullProduct() {
 
                         <AdditionalInfo
                           rating={product.rating || 0}
-                          manufacturer={product.manufacturer || 'Не указан'}
+                          manufacturer={product.manufacturer || 'Не вказаний'}
                           isAvailable={product.available || false}
                         />
                         <ProductPurchase
@@ -192,7 +189,7 @@ export default function FullProduct() {
 
                       <AdditionalInfo
                         rating={product.rating || 0}
-                        manufacturer={product.manufacturer || 'Не указан'}
+                        manufacturer={product.manufacturer || 'Не вказаний'}
                         isAvailable={product.available || false}
                       />
                       <ProductPurchase

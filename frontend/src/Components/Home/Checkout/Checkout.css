@@ -176,7 +176,6 @@
 .checkout-form-column-delivery {
   border: 1px solid rgb(238, 238, 238);
   border-radius: 7px;
-  margin-left: 10px;
   margin-bottom: 5px;
   padding: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -185,7 +184,7 @@
 .checkout-form-column-pay {
   border: 1px solid rgb(238, 238, 238);
   border-radius: 7px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-bottom: 5px;
   padding: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -252,6 +251,7 @@
 }
 
 .checkout-comment {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
   margin-top: 15px;
@@ -261,10 +261,6 @@
 
 .checkout-form-column {
   grid-column: 1;
-}
-
-.checkout-product-settle-box {
-  grid-column: 2;
 }
 
 .checkout-total-sum {
@@ -307,6 +303,11 @@
   align-items: center;
 }
 
+.checkout-product-settle-box {
+  margin-left: 10px;
+}
+
+
 @media (max-width: 768px) {
   .checkout-form-wrapper {
     display: flex;
@@ -325,6 +326,15 @@
   .checkout-order-summary table td:nth-child(5),
   .checkout-order-summary table td:nth-child(7) {
     display: none;
+  }
+
+  .checkout-product-settle-box {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .checkout-form-column-delivery {
+    margin-left: 0;
   }
 }
 
@@ -368,7 +378,8 @@
   .checkout-form-column-user input,
   .checkout-form-column-user select,
   .checkout-form-column-user textarea {
-    width: 100%;
+    box-sizing: border-box;
+    width: 100%;  
     padding: 8px;
     font-size: 12px;
   }

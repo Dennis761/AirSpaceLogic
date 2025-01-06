@@ -1,6 +1,5 @@
 @media (max-width: 992px) {
     .navbar-grid {
-      /* grid-template-columns: 1fr 1fr 1fr; */
       grid-gap: 10px;
     }
    
@@ -54,8 +53,6 @@
     }
 
     .custom-close-btn {
-      /* position: absolute;
-      z-index: 1051; */
       width: 38px;
       height: 38px;
       font-size: 20px;

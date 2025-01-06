@@ -20,7 +20,8 @@ export default function AdressHorizontal() {
       </div>
       <div className="info-adress-contact">
         <p><b>Телефон</b></p>
-        <p>066-972-86-65, 098-098-60-37</p>
+        <p>+38 (097) 032-78-99</p>
+        <p>+38 (050) 831-74-64</p>
       </div>
       <div className="info-adress-working-hours">
         <p><b>Години роботи</b></p>

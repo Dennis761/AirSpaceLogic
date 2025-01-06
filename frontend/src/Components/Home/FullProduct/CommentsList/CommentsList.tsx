@@ -48,6 +48,7 @@ const CommentsList: React.FC<CommentsListProps> = ({ comments, commentsPerPage =
 
   return (
     <div className="comments-wrapper">
+      <h3 className="comments-wrapper-h3">Коментарі</h3>
       <div className="comments-list">
         <div className="comments-container">
         {currentComments.map((comment, index) => (

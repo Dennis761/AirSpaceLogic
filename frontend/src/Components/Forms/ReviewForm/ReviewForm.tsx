@@ -94,7 +94,6 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ productId }) => {
         </label>
         <input
           type="text"
-          id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="review-input"

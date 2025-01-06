@@ -2,17 +2,13 @@
   display: flex;
   align-items: center;
   position: relative;
-  gap: 10px;
-
+  gap: 20px;
   justify-content: start;
   margin: 30px 0 0 30px;
   font-weight: 500;
-  position: relative;
 }
 
 .currency-option {
-  display: inline-block;
-  text-align: center;
   position: relative;
   font-size: 32px;
   font-weight: 500;
@@ -20,12 +16,6 @@
   padding: 10px 20px;
   color: white;
   transition: color 0.3s ease;
-}
-
-.currency-container h2 {
-  color: white;
-  font-weight: 600;
-  font-size: 34px;
 }
 
 .currency-option:hover {
@@ -38,25 +28,28 @@
 
 .currency-underline {
   position: absolute;
-  bottom: -6px;
+  bottom: 0;
   height: 4px;
   background-color: red;
   transition: all 0.3s ease;
+  width: 0;
+  left: 0;
 }
 
-.currency-option:nth-child(2).active ~ .currency-underline {
-  width: 88px; 
-  left: 160px;
+.currency-underline {
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  background-color: red;
+  width: 0;
+  left: 0;
+  transition: all 0.3s ease; /* Остается включенным */
 }
 
-.currency-option:nth-child(3).active ~ .currency-underline {
-  width: 102px;
-  left: 268px;
-}
-
-.currency-option:nth-child(4).active ~ .currency-underline {
-  width: 96px;
-  left: 388px;
+.currency-container h2 {
+  color: white;
+  font-weight: 600;
+  font-size: 34px;
 }
 
 
@@ -68,17 +61,14 @@
     align-items: center;
     position: relative;
     gap: 5px;
-  
     justify-content: start;
     margin: 15px 0 0 15px;
     font-weight: 500;
-    position: relative;
   }
-  
+
   .currency-option {
     display: inline-block;
     text-align: center;
-    position: relative;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -86,41 +76,26 @@
     color: white;
     transition: color 0.3s ease;
   }
-  
+
   .currency-container h2 {
     color: white;
     font-weight: 600;
     font-size: 17px;
   }
-  
+
   .currency-option:hover {
-    color: red; 
+    color: red;
   }
-  
+
   .currency-option.active {
-    color: red; 
+    color: red;
   }
-  
+
   .currency-underline {
     position: absolute;
     bottom: -3px;
     height: 2px;
     background-color: red;
     transition: all 0.3s ease;
-  }
-  
-  .currency-option:nth-child(2).active ~ .currency-underline {
-    width: 44px; 
-    left: 80px; 
-  }
-  
-  .currency-option:nth-child(3).active ~ .currency-underline {
-    width: 51px;
-    left: 134px;
-  }
-  
-  .currency-option:nth-child(4).active ~ .currency-underline {
-    width: 48px;
-    left: 194px;
   }
 }

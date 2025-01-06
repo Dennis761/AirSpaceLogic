@@ -7,7 +7,6 @@ export const sendContactForm = (name, phoneNumber, comment) => {
       const response = await axios.post('/sendToTelegram', { name, phoneNumber, comment });
 
       dispatch({ type: FORM_SUBMIT_SUCCESS });
-      console.log('Форма успешно отправлена:', response.data);
     } catch (error) {
       dispatch({ type: FORM_SUBMIT_FAILURE, payload: error.message });
       console.error('Ошибка при отправке формы:', error.message);

@@ -56,13 +56,13 @@ const ProductPurchase: React.FC<ProductPurchaseProps> = ({
                     {discountPercentage !== null ? (
                         <>
                             <span className="disconted-price">
-                                <span style={{ fontWeight: 'bold', fontSize: '45px' }}>{formatPrice(discountPrice)}</span>
-                                <span style={{marginRight: '12px'}}> {currencySymbol}</span>
+                                <span className="disconted-price-span">{formatPrice(discountPrice)}</span>
+                                <span className="disconted-price-currency-span"> {currencySymbol}</span>
                             </span>
  
                             <span className="old-price">{formatPrice(originalPrice)} {currencySymbol}</span>
                             <div className="discount-block">
-                                <span>Ваша скидка: </span>
+                                <span>Ваша знижка: </span>
                                 <span className="discount-percentage">-{discountPercentage}%</span>
                             </div>
                         </>
@@ -75,7 +75,7 @@ const ProductPurchase: React.FC<ProductPurchaseProps> = ({
             <button className="buy-button" disabled={!isAvailable} onClick={handleAddToCart}>
                 <FaShoppingCart className="product-cart-icon" />
                 <span >
-                    В корзину
+                    до кошика
                 </span>
             </button>
         </div>

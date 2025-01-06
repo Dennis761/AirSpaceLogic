@@ -8,7 +8,7 @@ interface ProductDescriptionProps {
 const ProductDescription: React.FC<ProductDescriptionProps> = ({ specifications }) => {
     return (
         <div className="product-description">
-            <h2>Общие характеристики</h2>
+            <h2>Загальні характеристики</h2>
             <ul>
                 {Object.keys(specifications).map((key) => (
                     <li key={key} className="description-item">

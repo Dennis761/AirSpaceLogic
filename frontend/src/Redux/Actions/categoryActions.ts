@@ -118,7 +118,6 @@ export const addProductToCategory = (categoryName: string, productData: any) => 
       payload: { categoryName, product: data.product },
     });
 
-    console.log('Продукт успешно добавлен:', data.product);
   } catch (error: any) {
     console.error('Ошибка при добавлении продукта:', error.message);
   }

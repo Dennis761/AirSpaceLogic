@@ -282,10 +282,16 @@
   color: white;
 }
 
+.phone-number a {
+  color: inherit; 
+  text-decoration: none; 
+}
+
 .phone-number {
   color: red;
   font-weight: 400;
   font-size: 40px;
+  text-decoration: none;
   margin: 0 0 0 20px;
 }
 
@@ -405,42 +411,3 @@
     margin: 5px 0;
   }
 }
-
-
-
-
-
-/* 
-.currency-container {
-  display: flex;
-  justify-content: start;
-  gap: 20px;
-  position: relative;
-}
-
-.currency-option {
-  position: relative;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 5px 10px;
-  transition: color 0.3s ease;
-}
-
-.currency-option:hover {
-  color: #007bff;
-}
-
-.currency-option::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #007bff; 
-  transition: all 0.3s ease;
-}
-
-.currency-option.active::after {
-  width: 100%; 
-} */

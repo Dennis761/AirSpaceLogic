@@ -57,7 +57,7 @@ export default function Catalog() {
           ))}
         </ul>
       ) : (
-        <p className="no-subcatalogs-message">Нет субкаталогов для отображения</p>
+        <p className="no-subcatalogs-message">Немає субкаталогів</p>
       )}
     </div>
   );
