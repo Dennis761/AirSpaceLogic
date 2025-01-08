@@ -71,7 +71,7 @@ export default function ContactUs() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Ваше имя"
+              placeholder="Ваше ім'я"
               className="custom-contact-us-input"
             />
           </div>
@@ -96,7 +96,7 @@ export default function ContactUs() {
               id="formComment"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder="Комментарий"
+              placeholder="Відгук"
               className="custom-contact-us-input"
             />
           </div>
