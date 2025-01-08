@@ -53,27 +53,6 @@ export const deleteProductCategory = async (req, res) => {
     }
 };
 
-export const deleteProductFromCategory = async (req, res) => {
-    try {
-        const adminId = req.userId;
-        const { categoryId, productId } = req.body;
-        const admin = await AdminModel.findById(adminId);
-
-        const category = admin.productCategories.id(categoryId);
-        if (!category) return res.status(404).json({ message: 'Категория не найдена' });
-
-        const productIndex = category.productIds.indexOf(productId);
-        if (productIndex === -1) return res.status(404).json({ message: 'Товар не найден в категории' });
-
-        category.productIds.splice(productIndex, 1);
-        await admin.save();
-
-        res.status(200).json({ message: 'Товар удален из категории', category });
-    } catch (error) {
-        res.status(500).json({ message: 'Ошибка при удалении товара из категории', error });
-    }
-};
-
 export const getProductCategories = async (req, res) => {
     try {
         const adminId = req.userId;

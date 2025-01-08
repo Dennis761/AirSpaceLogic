@@ -20,18 +20,45 @@ export const searchProducts = async (req, res) => {
   }
 };
 
-
 export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
 
+    const getPublicIdFromUrl = (url) => {
+      const regex = /\/v\d+\/(.+)\.[a-z]+$/i;
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    };
+    
     const product = await Product.findById(id);
     if (!product) {
       return res.status(404).json({ message: "Товар не найден." });
     }
 
-    if (product.image) {
-      await deleteImage(product.image.public_id);
+    if (product.titleImage) {
+      const publicId = getPublicIdFromUrl(product.titleImage);
+      if (publicId) {
+        console.log("Удаляем titleImage с public_id:", publicId);
+        await deleteImage(publicId);
+      }
+    }
+
+    if (product.hoverImage) {
+      const publicId = getPublicIdFromUrl(product.hoverImage);
+      if (publicId) {
+        console.log("Удаляем hoverImage с public_id:", publicId);
+        await deleteImage(publicId);
+      }
+    }
+
+    if (product.imagesCollection && product.imagesCollection.length > 0) {
+      for (let imageUrl of product.imagesCollection) {
+        const publicId = getPublicIdFromUrl(imageUrl);
+        if (publicId) {
+          console.log("Удаляем изображение с public_id:", publicId);
+          await deleteImage(publicId);
+        }
+      }
     }
 
     await product.deleteOne();

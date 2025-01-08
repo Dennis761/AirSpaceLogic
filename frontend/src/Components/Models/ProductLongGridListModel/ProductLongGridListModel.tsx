@@ -3,7 +3,7 @@ import ProductCardModel from "../../Models/ProductCardModel/ProductCardModel.tsx
 import "./ProductLongGridListModel.css";
 
 interface ProductLongGridListModelProps {
-  products: any[]; // Массив товаров
+  products: any[]; 
   isAuthenticated: boolean;
   isLoading: boolean;
 }

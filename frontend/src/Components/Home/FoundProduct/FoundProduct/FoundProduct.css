@@ -40,7 +40,10 @@
   margin: 0 auto;
 }
 
-
+.search-result-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .no-products {
   text-align: center;
@@ -322,6 +325,6 @@
   .search-result-list {
     text-align: center;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 15px auto;
   }
 }

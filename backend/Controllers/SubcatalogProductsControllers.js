@@ -143,10 +143,15 @@ export const addProductToSubcatalog = async (req, res) => {
   }
 };
 
-
 export const deleteProductFromSubcatalog = async (req, res) => {
   const { catalogKey, subcatalogKey, productId } = req.params;
 
+  const getPublicIdFromUrl = (url) => {
+    const regex = /\/v\d+\/(.+)\.[a-z]+$/i;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
+  
   try {
     const admin = await AdminModel.findOne();
     if (!admin) return res.status(404).json({ message: 'Admin not found' });
@@ -164,11 +169,11 @@ export const deleteProductFromSubcatalog = async (req, res) => {
     if (!product) return res.status(404).json({ message: 'Product not found in database' });
 
     const imageDeletionPromises = [
-      deleteImage(product.titleImage), 
-      deleteImage(product.hoverImage), 
-      ...product.imagesCollection.map(image => deleteImage(image)), 
+      deleteImage(getPublicIdFromUrl(product.titleImage)), // Извлечь public_id из titleImage
+      deleteImage(getPublicIdFromUrl(product.hoverImage)), // Извлечь public_id из hoverImage
+      ...product.imagesCollection.map(image => deleteImage(getPublicIdFromUrl(image))), // Удалить все изображения из imagesCollection
     ];
-    await Promise.all(imageDeletionPromises);
+    await Promise.allSettled(imageDeletionPromises); // Используем Promise.allSettled для обработки ошибок индивидуально
 
     subcatalog.productIds.splice(productIndex, 1); 
     await admin.save();
@@ -177,7 +182,7 @@ export const deleteProductFromSubcatalog = async (req, res) => {
 
     res.status(200).json({
       message: 'Product and related images deleted successfully',
-      products: subcatalog.products,
+      products: subcatalog.productIds,
     });
   } catch (error) {
     console.error('Error deleting product:', error);

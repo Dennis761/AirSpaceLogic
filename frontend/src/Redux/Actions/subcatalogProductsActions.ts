@@ -16,7 +16,7 @@ interface Product {
   rating?: number;
   parametrs?: string[];
   imagesCollection: string[];
-  ratingCount?: number;
+  comments?: number;
 }
 
 export const fetchSubCatalogProducts =

@@ -22,7 +22,7 @@ export const getCategoriesWithProducts = async (req, res) => {
         hoverImage: product.hoverImage,
         rating: product.rating || 0,
         parametrs: product.parametrs || [],
-        ratingCount: product.ratingCount || 0,
+        comments: product.comments.length || 0,
       })),
     }));
 
@@ -171,7 +171,13 @@ export const removeProductFromCategory = async (req, res) => {
   try {
     const { categoryName, productId } = req.params;
 
-    const admin = await Admin.findOne(); 
+    const getPublicIdFromUrl = (url) => {
+      const regex = /\/v\d+\/(.+)\.[a-z]+$/i;
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    };
+
+    const admin = await Admin.findOne();
     if (!admin) {
       return res.status(404).json({ message: 'Администратор не найден.' });
     }
@@ -191,10 +197,30 @@ export const removeProductFromCategory = async (req, res) => {
       return res.status(404).json({ message: 'Продукт не найден.' });
     }
 
-    if (product.titleImage) await deleteImage(product.titleImage);
-    if (product.hoverImage) await deleteImage(product.hoverImage);
+    if (product.titleImage) {
+      const publicId = getPublicIdFromUrl(product.titleImage);
+      if (publicId) {
+        console.log('Удаляем titleImage с public_id:', publicId);
+        await deleteImage(publicId);
+      }
+    }
+
+    if (product.hoverImage) {
+      const publicId = getPublicIdFromUrl(product.hoverImage);
+      if (publicId) {
+        console.log('Удаляем hoverImage с public_id:', publicId);
+        await deleteImage(publicId);
+      }
+    }
+
     if (product.imagesCollection && product.imagesCollection.length > 0) {
-      await Promise.all(product.imagesCollection.map((url) => deleteImage(url)));
+      for (const imageUrl of product.imagesCollection) {
+        const publicId = getPublicIdFromUrl(imageUrl);
+        if (publicId) {
+          console.log('Удаляем изображение с public_id:', publicId);
+          await deleteImage(publicId);
+        }
+      }
     }
 
     category.products.splice(productIndex, 1);

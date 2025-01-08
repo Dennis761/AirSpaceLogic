@@ -30,9 +30,11 @@ const ProductRowModel: React.FC<ProductRowModelProps> = ({
     titleImage,
     hoverImage,
     rating = 0,
-    ratingCount = 0,
+    comments = 0,
     parametrs = [],
   } = product;
+
+  const commentCount = Array.isArray(comments) ? comments.length : comments || 0;
 
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
@@ -135,7 +137,7 @@ const ProductRowModel: React.FC<ProductRowModelProps> = ({
         <h3 className="product-row-name">{name}</h3>
         <div className="product-row-rating">
           <ProductRatingModel rating={rating} />
-          <ReviewCount count={ratingCount} />
+          <ReviewCount count={commentCount} />
         </div>
         <div className="product-row-price">
           {discount ? (

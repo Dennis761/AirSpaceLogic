@@ -23,6 +23,7 @@ const ProductCardModel: React.FC<ProductCardModelProps> = ({
   isAdmin,
   categoryTitle,
 }) => {
+
   const {
     _id,
     name,
@@ -31,7 +32,7 @@ const ProductCardModel: React.FC<ProductCardModelProps> = ({
     titleImage,
     hoverImage,
     rating = 0,
-    ratingCount = 0,
+    comments = 0,
     parametrs = [],
   } = product;
 
@@ -41,6 +42,8 @@ const ProductCardModel: React.FC<ProductCardModelProps> = ({
   const [showCartForm, setShowCartForm] = useState(false);
 
   const { activeCurrency, currencyRate } = useSelector((state: RootState) => state.currency);
+
+  const commentCount = Array.isArray(comments) ? comments.length : comments || 0;
 
   const formatPrice = (price: number): string => {
     return Math.round(price).toLocaleString("ru-RU");
@@ -109,22 +112,6 @@ const ProductCardModel: React.FC<ProductCardModelProps> = ({
     }
   };
 
-  // const getLabelColor = (param: string) => {
-  //   if (param.startsWith("Discount")) {
-  //     return "red";
-  //   }
-  //   switch (param) {
-  //     case "Hit":
-  //       return "#28a745";
-  //     case "Recommended":
-  //       return "#6f42c1";
-  //     case "New product":
-  //       return "#ff6200";
-  //     default:
-  //       return "gray";
-  //   }
-  // };
-
   const updatedParametrs =
     discount && parametrs
       ? [...parametrs.filter((param) => !param.startsWith("Знижка")), `Знижка -${discountPercentage}%`]
@@ -155,7 +142,7 @@ const ProductCardModel: React.FC<ProductCardModelProps> = ({
 
           <div className="rating-review-container">
             <ProductRatingModel rating={rating} />
-            <ReviewCount count={ratingCount} />
+            <ReviewCount count={commentCount} />
           </div>
           <div className="price-cart-container">
             <div className="price-container">

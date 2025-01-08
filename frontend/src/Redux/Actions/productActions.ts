@@ -18,7 +18,7 @@ import {
     rating?: number;
     parametrs?: string[];
     imagesCollection: string;
-    ratingCount?: number;
+    comments?: number;
   }
 
 export const fetchProduct = (productId: string) => async (dispatch: AppDispatch) => {

@@ -174,3 +174,10 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 460px) {
+  .product-row {
+    align-items: flex-start;
+    max-width: 300px;
+  }
+}

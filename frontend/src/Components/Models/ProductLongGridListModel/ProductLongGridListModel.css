@@ -12,7 +12,7 @@
   
   .product-long-grid-card-left,
   .product-long-grid-card-right {
-    padding: 9px 0 9px 0;
+    padding: 9px 5px 9px 5px;
   }
 
   @media (max-width: 1312px) {

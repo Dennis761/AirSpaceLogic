@@ -117,25 +117,3 @@ export const deleteSubcatalog = async (req, res) => {
     res.status(500).json({ message: 'Server error', error });
   }
 };
-
-export const deleteProductFromSubcatalog = async (req, res) => {
-  const { catalogKey, subcatalogKey, productId } = req.params;
-
-  try {
-    const admin = await Admin.findOne();
-    if (!admin) return res.status(404).json({ message: 'Admin not found' });
-
-    const catalog = admin.catalogs.id(catalogKey);
-    if (!catalog) return res.status(404).json({ message: 'Catalog not found' });
-
-    const subcatalog = catalog.subcatalogs.id(subcatalogKey);
-    if (!subcatalog) return res.status(404).json({ message: 'Subcatalog not found' });
-
-    subcatalog.products.id(productId).remove();
-    await admin.save();
-
-    res.status(200).json({ message: 'Product deleted successfully', products: subcatalog.products });
-  } catch (error) {
-    res.status(500).json({ message: 'Server error', error });
-  }
-};

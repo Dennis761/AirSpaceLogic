@@ -9,7 +9,7 @@ interface Product {
   hoverImage: string;
   rating: number;
   parametrs: string[];
-  ratingCount: number;
+  comments: number;
 }
 
 interface GridLongModelProps {
@@ -17,7 +17,7 @@ interface GridLongModelProps {
 }
 
 const GridLongModel: React.FC<GridLongModelProps> = ({ product }) => {
-  const { name, price, titleImage, hoverImage, rating, parametrs, ratingCount } = product;
+  const { name, price, titleImage, hoverImage, rating, parametrs, comments } = product;
 
   return (
     <div className="grid-long-model-product-card">
@@ -36,7 +36,7 @@ const GridLongModel: React.FC<GridLongModelProps> = ({ product }) => {
           {Array.from({ length: 5 }, (_, i) => (
             <span key={i} className={`grid-long-model-star ${i < rating ? 'grid-long-model-filled' : ''}`}>★</span>
           ))}
-          <span className="grid-long-model-rating-count">({ratingCount})</span>
+          <span className="grid-long-model-rating-count">({comments})</span>
         </div>
         <div className="grid-long-model-price">Цена: {price} грн</div>
         <button className="grid-long-model-buy-button">Купить</button>

@@ -73,9 +73,11 @@ export const deleteSlide = async (req, res) => {
       }
   
       const slide = admin.banners[slideIndex];
+      console.log(slide.desktopPublicId)
 
       await deleteImage(slide.desktopPublicId);
-  
+      await deleteImage(slide.mobilePublicId);
+
       admin.banners.splice(slideIndex, 1);
       await admin.save();
   

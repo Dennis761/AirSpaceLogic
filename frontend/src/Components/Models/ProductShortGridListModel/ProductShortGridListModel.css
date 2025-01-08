@@ -11,7 +11,7 @@
   
   .product-short-grid-card-left,
   .product-short-grid-card-right {
-    padding: 9px 0 9px 0;
+    padding: 9px 5px 9px 5px;
   }
   
   @media (max-width: 1124px) {

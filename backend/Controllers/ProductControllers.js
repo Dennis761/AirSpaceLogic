@@ -89,27 +89,51 @@ export const createProduct = async (req, res) => {
 };
 
 export const deleteProduct = async (req, res) => {
-  const { productId } = req.params;
-
   try {
+    const { productId } = req.params;
+
+    const getPublicIdFromUrl = (url) => {
+      const regex = /\/v\d+\/(.+)\.[a-z]+$/i;
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    };
+    
     const product = await ProductModel.findById(productId);
-    if (!product) return res.status(404).json({ message: 'Product not found in database' });
+    if (!product) {
+      return res.status(404).json({ message: "Товар не найден." });
+    }
 
-    const imageDeletionPromises = [
-      deleteImage(product.titleImage), 
-      deleteImage(product.hoverImage), 
-      ...product.imagesCollection.map(image => deleteImage(image)),
-    ];
-    await Promise.all(imageDeletionPromises);
+    if (product.titleImage) {
+      const publicId = getPublicIdFromUrl(product.titleImage);
+      if (publicId) {
+        await deleteImage(publicId);
+      }
+    }
 
-    await ProductModel.findByIdAndDelete(productId);
+    if (product.hoverImage) {
+      const publicId = getPublicIdFromUrl(product.hoverImage);
+      if (publicId) {
+        await deleteImage(publicId);
+      }
+    }
+
+    if (product.imagesCollection && product.imagesCollection.length > 0) {
+      for (let imageUrl of product.imagesCollection) {
+        const publicId = getPublicIdFromUrl(imageUrl);
+        if (publicId) {
+          await deleteImage(publicId);
+        }
+      }
+    }
+
+    await product.deleteOne();
 
     res.status(200).json({
       message: 'Product and related images deleted successfully',
       productId: productId,
     });
   } catch (error) {
-    console.error('Error deleting product:', error);
-    res.status(500).json({ message: 'Server error', error });
+    console.error("Ошибка удаления товара:", error);
+    res.status(500).json({ message: "Ошибка сервера." });
   }
 };

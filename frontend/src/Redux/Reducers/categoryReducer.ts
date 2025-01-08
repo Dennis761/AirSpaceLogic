@@ -17,7 +17,7 @@ export interface Product {
   hoverImage: string;
   rating?: number;
   parametrs?: string[];
-  ratingCount?: number;
+  comments?: number;
 }
 
 interface Category {
