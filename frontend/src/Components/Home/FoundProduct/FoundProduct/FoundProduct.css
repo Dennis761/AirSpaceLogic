@@ -63,6 +63,9 @@
   margin: 0 auto;
 }
 
+#searchInput-grid3 {
+  box-sizing: border-box;
+}
 
 .product-toolbar-container-grid2 {
   display: flex;
@@ -74,6 +77,10 @@
   max-width: 1030px;
   margin: 0 auto;
   overflow-x: hidden;
+}
+
+#searchInput-grid2 {
+  box-sizing: border-box;
 }
 
 .product-toolbar-container-list {
@@ -88,13 +95,17 @@
   overflow-x: hidden;
 }
 
+#searchInput-list {
+  box-sizing: border-box;
+}
+
 .toolbar-title {
   font-size: 35px;
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
+ 
 .toolbar-controls {
   display: flex;
   align-items: center;
@@ -216,14 +227,14 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 778px) {
   .search-result-grid2, .product-toolbar-container-grid2 {
     margin-left: 5vw;
     max-width: 550px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 615px) {
   .product-toolbar-container-grid2 {
     margin: 0 auto;
     width: 350px;
@@ -232,7 +243,8 @@
   .search-result-grid2 {
     text-align: center;
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -266,7 +278,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 778px) {
   .search-result-grid3, .product-toolbar-container-grid3{
     margin-left: auto;
     margin-right: auto;
@@ -274,7 +286,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 615px) {
   .product-toolbar-container-grid3 {
     margin: 0 auto;
     width: 350px;
@@ -283,7 +295,15 @@
   .search-result-grid3 {
     text-align: center;
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-toolbar-container-grid3{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 350px;
   }
 }
 
@@ -310,7 +330,7 @@
   }
 }
 
-@media ((max-width: 810px)) {
+@media ((max-width: 778px)) {
   .found-product-list-container {
     max-width: 544px;
   }
@@ -325,6 +345,7 @@
   .search-result-list {
     text-align: center;
     max-width: 400px;
-    margin: 15px auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

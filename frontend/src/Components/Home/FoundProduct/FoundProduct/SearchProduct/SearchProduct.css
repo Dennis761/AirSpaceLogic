@@ -85,7 +85,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 778px) {
     .search-component-grid3 {
       margin-left: auto;
       margin-right: auto;
@@ -183,7 +183,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 778px) {
   .search-component-grid2 {
     max-width: 520px;
     margin-left: 5vw;
@@ -281,13 +281,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 778px) {
   .search-component-list {
     max-width: 520px;
   }
 }
 
-@media (max-width: 615px) {
+@media (max-width: 610px) {
   .search-component-list {
     margin-left: auto;
     margin-right: auto;

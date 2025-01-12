@@ -125,22 +125,7 @@
 @media (max-width: 1010px) {
   .product-row {
     align-items: flex-start;
-    max-width: 800px;
-  }
-}
-
-@media (max-width: 915px) {
-  .product-row {
-    align-items: flex-start;
-    max-width: 700px;
-  }
-}
-
-
-@media (max-width: 810px) {
-  .product-row {
-    align-items: flex-start;
-    max-width: 500px;
+    width: 99%;
   }
 }
 
