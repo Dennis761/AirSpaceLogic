@@ -65,7 +65,7 @@ export default function FullProduct() {
   
   if (error) {
     return (
-      <div className='error-message-product-container'>
+      <div className='error-message-container'>
         <img src={errorImage} className='error-image'/>
       </div>
     );

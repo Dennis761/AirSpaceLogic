@@ -44,6 +44,5 @@
 }
 
 .value {
-    flex-shrink: 0;
     text-align: right;
 }

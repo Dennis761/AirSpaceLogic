@@ -52,17 +52,3 @@
   animation: spin 1s linear infinite;
 }
 
-
-
-.error-message-product-container {
-  width: 100wh;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.error-message-product-container .error-image {
-  width: 576px
-}
-
