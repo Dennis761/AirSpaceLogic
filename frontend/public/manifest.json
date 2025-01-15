@@ -3,12 +3,12 @@
   "name": "Air Space Logic",
   "icons": [
     {
-      "src": "AirSpaceLogic.png",
+      "src": "aslicon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "AirSpaceLogic.png",
+      "src": "aslicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
